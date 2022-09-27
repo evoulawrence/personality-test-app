@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import NextButton from '../../components/NextButton/NextButton';
 import Option from '../../components/Option/Option'
 import Question from '../../components/Question/Question';
-import { jsonData } from '../../api/jsonData';
 import Button from '../../components/Button/Button';
+import Spinner from '../../components/Spinner/Spinner'; 
+import { BASE_URL } from '../../api/api';
 
 const PersonalityTest = () => {
-    const [questions, setQuestions] = useState(jsonData);
+    const [questions, setQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(1);
     const [personalityType, setPersonalityType] = useState({introvert: 0, extrovert: 0});
     const [inputValue, setInputValue] = useState('');
@@ -19,9 +20,13 @@ const PersonalityTest = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setQuestions(jsonData)
-        console.log(questions)
-    }, [])
+        const fetchQuestions = async () => {
+            const resp = await axios.get(BASE_URL);
+            setQuestions(resp.data);
+            setIsLoading(false);
+        }
+        fetchQuestions();
+    }, []);
 
     const handleOption = (e, id) => {
         setInputValue(e.currentTarget.getAttribute('data-personality'));
@@ -49,9 +54,10 @@ const PersonalityTest = () => {
         setInputValue('');
         setSelected('');
     }
-
+    
     return (
         <div className="quizWrapper">
+            {isLoading && <Spinner />}
             <>
                 <Question
                     currentQuestion={currentQuestion}
@@ -65,12 +71,12 @@ const PersonalityTest = () => {
                     handleOption={handleOption}
                     selected={selected}
                 />
-                <Button 
+                {!isLoading && <Button 
                     type="secondary" 
                     clickHandler={handleNext} 
                     buttonDisabled={disableButton} 
                     label="Next Question"
-                />
+                />}
             </>
         </div>
     )
