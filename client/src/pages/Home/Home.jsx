@@ -1,6 +1,7 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import './home.css'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from '../../components/Button/Button';
+import './home.css';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -12,7 +13,11 @@ const Home = () => {
             <h1>Welcome to PersonalityTest</h1>
             <p>Consist of 5 Questions</p>
             <h3>To get your true personality, answer honestly</h3>
-            <button onClick={showTest}>Let's Go</button>
+            <Button 
+                type="primary" 
+                clickHandler={showTest} 
+                label="Let's Go" 
+            />
         </div>
     )
 }

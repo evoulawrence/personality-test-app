@@ -4,6 +4,7 @@ import NextButton from '../../components/NextButton/NextButton';
 import Option from '../../components/Option/Option'
 import Question from '../../components/Question/Question';
 import { jsonData } from '../../api/jsonData';
+import Button from '../../components/Button/Button';
 
 const PersonalityTest = () => {
     const [questions, setQuestions] = useState(jsonData);
@@ -64,9 +65,11 @@ const PersonalityTest = () => {
                     handleOption={handleOption}
                     selected={selected}
                 />
-                <NextButton 
-                    handleNext={handleNext} 
-                    disableButton={disableButton}
+                <Button 
+                    type="secondary" 
+                    clickHandler={handleNext} 
+                    buttonDisabled={disableButton} 
+                    label="Next Question"
                 />
             </>
         </div>

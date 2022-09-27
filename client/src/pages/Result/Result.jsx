@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 import './result.css';
 
 const Result = () => {
@@ -15,7 +16,11 @@ const Result = () => {
             <h2 className="personalityType">
                 {`${params.introvert > params.extrovert ? "You are an Introvert" : "Your are an Extrovert"}`}
             </h2>
-            <button className="returnButton" onClick={returnToHome}>Take Test Again</button>
+            <Button 
+                type="primary" 
+                clickHandler={returnToHome} 
+                label="Take Test Again" 
+            />
         </div>
     )
 }
