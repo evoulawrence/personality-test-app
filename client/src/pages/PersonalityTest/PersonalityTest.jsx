@@ -63,6 +63,7 @@ const PersonalityTest = () => {
                     currentQuestion={currentQuestion}
                     questions={questions}
                     questionsLength={questionsLength}
+                    isLoading={isLoading}
                 />
                 <Option
                     currentQuestion={currentQuestion}
