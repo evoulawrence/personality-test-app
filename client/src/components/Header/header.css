@@ -1,0 +1,31 @@
+.headerWrapper {
+    top: 0;
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background-color: #59636E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 200;
+}
+
+.siteHeader {
+    font-weight: 600;
+    font-size: 26px;
+    color: #fff;
+    margin-right: 200px;
+}
+
+.logoutButton {
+    padding: 10px 20px;
+    border-radius: 10px !important;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    text-transform: uppercase;
+    color: #000 !important;
+}

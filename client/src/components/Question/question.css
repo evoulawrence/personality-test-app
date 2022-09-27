@@ -1,0 +1,21 @@
+.questionSection {
+    width: 100%;
+    position: relative;
+}
+
+.questionCount {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: black;
+}
+
+.questionCount span {
+    font-size: 28px;
+    color: black;
+}
+
+.questionText {
+    margin-bottom: 12px;
+    color: black;
+    font-weight: 600;
+}

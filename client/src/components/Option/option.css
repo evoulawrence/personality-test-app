@@ -1,0 +1,20 @@
+.optionSection {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+}
+    
+.optionLabel {
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: #f2f3f4;
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #031323;
+    border: 0px;
+    cursor: pointer;
+    list-style: none;
+    margin-left: 0px;
+}
+    
