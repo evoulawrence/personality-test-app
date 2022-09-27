@@ -16,4 +16,4 @@ To Setup Your Project
 Testing the API
 ---------------------------------------------------------------
 You can test the API with a tool like Postman or Thunder client. First, go to the project directory and start the PHP server: php -S 127.0.0.1:8000 -t public
-Then connect to 127.0.0.1:8000/teamway with Postman or Thunder client and send http requests. 
+Then connect to 127.0.0.1:8000/personality-test with Postman or Thunder client and send http requests. 
