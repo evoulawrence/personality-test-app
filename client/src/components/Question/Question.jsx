@@ -13,7 +13,7 @@ const Question = ({ currentQuestion, questions, questionsLength }) => {
                     <div className='questionText'>{questions && questionsLength > 0 && questions[currentQuestion].description}</div>
                 </>
             ) : (
-                <h2>No data available at this time</h2>
+                null
             )}
         </div>
     )
