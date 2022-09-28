@@ -19,6 +19,7 @@ const PersonalityTest = () => {
 
     const questionsLength = Object.keys(questions).length;
     const navigate = useNavigate();
+    let buttonLabel = currentQuestion < questionsLength ? 'Next Question' : 'Show Result';
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -83,7 +84,7 @@ const PersonalityTest = () => {
                     type="secondary" 
                     clickHandler={handleNext} 
                     buttonDisabled={disableButton} 
-                    label="Next Question"
+                    label={buttonLabel}
                 />}
             </>
         </div>
